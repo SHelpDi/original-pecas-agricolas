@@ -1,0 +1,26 @@
+{
+  "short_name": "Original Peças Agrícolas",
+  "name": "Original Peças Agrícolas",
+  "description": "Sistema online da Original Peças Agrícolas",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "96x96 32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#129E53",
+  "background_color": "#ffffff"
+}
