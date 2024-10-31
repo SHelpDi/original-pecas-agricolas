@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "sanity build",
+    "build": "next build",
+    "build:sanity": "cd studio && npm run build",
     "start": "next start",
     "lint": "next lint",
     "sass": "sass --watch ./src/style/scss/main.scss:./src/style/css/main.css"
