@@ -1,3 +1,23 @@
+import localFont from "next/font/local";
+import "../assets/css/main.css";
+
+const nunitoRegular = localFont({
+  src: "../assets/fonts/Nunito-Regular.ttf",
+  variable: "--font-nunito-regular",
+  /* weight: "100 900", */
+});
+const nunitoMedium = localFont({
+  src: "../assets/fonts/Nunito-Medium.ttf",
+  variable: "--font-nunito-medium",
+  /* weight: "100 900", */
+});
+
+const nunitoBold = localFont({
+  src: "../assets/fonts/Nunito-Bold.ttf",
+  variable: "--font-nunito-bold",
+  /* weight: "100 900", */
+});
+
 export const metadata = {
   title: "Original Peças Agrícolas",
   description: "Site da Original Peças Agrícolas",
@@ -28,7 +48,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body>
+      <body className={`${nunitoRegular.variable} ${nunitoMedium.variable} ${nunitoBold.variable}`}>
         {children}
       </body>
     </html>

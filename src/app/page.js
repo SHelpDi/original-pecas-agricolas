@@ -4,7 +4,6 @@ export default function Home() {
     <>
       <Header />
       <main>Home</main>
-      {/* "build": "next build --output public", */}
     </>
   );
 }
