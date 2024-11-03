@@ -3,30 +3,29 @@ import Image from "next/image";
 import Logo from "../assets/images/svg/logo.svg";
 import { FaWhatsapp, FaSquareFacebook, FaInstagram } from "react-icons/fa6";
 
-
 export default async function Header({}) {
-  /* const dollarNow = await fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL');
-  const dollar = await dollarNow.json(); */
+  const dollarNow = await fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL');
+  const dollar = await dollarNow.json();
 
   const date = new Date();
-  const options = { timeZone: 'America/Sao_Paulo' };
-  const semana = ['Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado'];
-  const diaDaSemana = semana[date.getDay('pt-BR', options)];
-  const diaDoMes = date.getDate('pt-BR', options);
-  const mes = date.toLocaleString('pt-BR', { month: 'long' });
-  const ano = date.getFullYear('pt-BR', options);
-
-  /* const weatherNow = await fetch('https://api.weatherapi.com/v1/current.json?key=c84b496246834a438ae191258242905&q=cascavel-269450&lang=pt');
-  const weather = await weatherNow.json(); */
-    
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const dateNow = date.toLocaleString("pt-BR", options);
   
+  const weatherNow = await fetch('https://api.weatherapi.com/v1/current.json?key=c84b496246834a438ae191258242905&q=cascavel-269450&lang=pt');
+  const weather = await weatherNow.json();
+
   return (
     <>
       <header>
         <div className="topo">
-          <span>dólar hoje - R$ {/* {dollar.USDBRL.high} */}</span>
-          <span>{`${diaDaSemana}, ${diaDoMes} de ${mes} de ${ano}`}</span>
-          <span>{/* {weather.current.condition.text} */}</span>
+          <span>dólar hoje - R$ {dollar.USDBRL.high}</span>
+          <span>{`${dateNow}`}</span>
+          <span>{weather.current.condition.text}</span>
           <div className="links">
             <Link
               href="https://www.instagram.com/originalpecasagricolas/"
