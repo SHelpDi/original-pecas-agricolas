@@ -5,6 +5,12 @@
   cursor: default;
 }
 
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
 :root {
   --bg-color: #ffffff;
   --color: #202020;
@@ -12,7 +18,8 @@
   --color-02: #129E53;
   --color-03: #FFD326;
   --color-04: #FAAB30;
-  --border: 1px solid var(--color-02);
+  --border-01: 1px solid var(--color-01);
+  --border-02: 1px solid var(--color-02);
   --border-radius: 3px;
   --shadow-01: 6px 6px 6px 0 rgba(0, 0, 0, 0.30);
   --transition: 0.5s;
@@ -80,13 +87,13 @@ body header .topo .links {
 }
 body header .topo .links a {
   text-decoration: none;
-  height: 40px;
+  height: 35px;
   width: auto;
   color: var(--color-02);
   margin: 0 25px;
 }
 body header .topo .links a svg {
-  height: 40px;
+  height: 35px;
   width: auto;
 }
 body header .topo .links a:hover {
@@ -102,8 +109,8 @@ body header .logo {
   align-items: center;
 }
 body header .logo img {
-  width: 196.01px;
-  height: 160px;
+  width: 141px;
+  height: 115.09px;
 }
 body header nav {
   display: flex;
@@ -129,7 +136,7 @@ body header nav ul li {
   height: 25px;
   align-items: center;
   justify-content: center;
-  border: var(--border);
+  border: var(--border-02);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-01);
   margin: 7px 0;
@@ -159,6 +166,49 @@ body header .linha {
   height: 5px;
   background-color: var(--color-01);
   bottom: 0;
+}
+body .search {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100dvw;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+body .search form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+body .search form input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 300px;
+  height: 40px;
+  padding-inline: 20px;
+  border-radius: var(--border-radius);
+  border: var(--border-01);
+  box-shadow: var(--shadow-01);
+}
+body .search form input::placeholder {
+  font-size: 14pt;
+  color: var(--color-01);
+}
+body .search form input:focus {
+  border: var(--border-02);
+}
+body .search form svg {
+  position: absolute;
+  width: 25px;
+  height: auto;
+  color: var(--color-01);
+  top: 8px;
+  right: 20px;
 }
 
 @media screen and (min-width: 800px) {
@@ -244,6 +294,45 @@ body header .linha {
     height: 5px;
     background-color: var(--color-01);
     bottom: 0;
+  }
+  body .search {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100dvw;
+    height: 50px;
+    align-items: center;
+    margin-top: 50px;
+  }
+  body .search form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    height: 40px;
+  }
+  body .search form input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    height: 40px;
+    padding-inline: 20px;
+    border-radius: var(--border-radius);
+    border: var(--border-01);
+    box-shadow: var(--shadow-01);
+  }
+  body .search form input::placeholder {
+    font-size: 14pt;
+    color: var(--color-01);
+  }
+  body .search form svg {
+    position: absolute;
+    width: 25px;
+    height: auto;
+    color: var(--color-01);
+    top: 8px;
+    right: 20px;
   }
 }
 @media screen and (min-width: 1000px) {
