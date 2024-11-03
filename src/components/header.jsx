@@ -4,11 +4,11 @@ import Logo from "../assets/images/svg/logo.svg";
 import { FaWhatsapp, FaSquareFacebook, FaInstagram } from "react-icons/fa6";
 
 export default async function Header({}) {
-  /* const dollarNow = await fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL');
+  const dollarNow = await fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL');
   const dollar = await dollarNow.json();
 
   const weatherNow = await fetch('https://api.weatherapi.com/v1/current.json?key=c84b496246834a438ae191258242905&q=cascavel-269450&lang=pt');
-  const weather = await weatherNow.json(); */
+  const weather = await weatherNow.json();
 
   const date = new Date();
   const options = {
@@ -24,9 +24,9 @@ export default async function Header({}) {
     <>
       <header>
         <div className="topo">
-          <span>dólar hoje - R$ {/* {dollar.USDBRL.high} */}</span>
+          <span>dólar hoje - R$ {dollar.USDBRL.high}</span>
           <span>{`${dateNow}`}</span>
-          <span>{/* {weather.current.condition.text} */}</span>
+          <span>{weather.current.condition.text}</span>
           <div className="links">
             <Link
               href="https://www.instagram.com/originalpecasagricolas/"
