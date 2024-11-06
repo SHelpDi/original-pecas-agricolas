@@ -1,14 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../assets/images/svg/logo.svg";
-import { FaWhatsapp, FaSquareFacebook, FaInstagram } from "react-icons/fa6";
+import { FaSquareFacebook, FaInstagram } from "react-icons/fa6";
 
-export default async function Header({}) {
-  const dollarNow = await fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL');
+export default async function Header() {
+  
+  const dollarNow = await fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL', {cache: 'no-store'});
   const dollar = await dollarNow.json();
+  const dolla = await dollar.USDBRL;
+  //console.log(dollar);
 
-  const weatherNow = await fetch('https://api.weatherapi.com/v1/current.json?key=c84b496246834a438ae191258242905&q=cascavel-269450&lang=pt');
-  const weather = await weatherNow.json();
+  /* const weatherNow = await fetch('https://api.weatherapi.com/v1/current.json?key=c84b496246834a438ae191258242905&q=cascavel-269450&lang=pt', {cache: 'no-store'});
+  const weather = await weatherNow.json(); */
+  //console.log(weather)
 
   const date = new Date();
   const options = {
@@ -21,12 +25,13 @@ export default async function Header({}) {
   const dateNow = date.toLocaleString("pt-BR", options);
 
   return (
+    
     <>
       <header>
         <div className="topo">
-          <span>dólar hoje - R$ {dollar.USDBRL.high}</span>
-          <span>{`${dateNow}`}</span>
-          <span>{weather.current.condition.text}</span>
+          <span>dólar hoje - R$ {dolla.bid}</span>
+          <span>{dateNow}</span>
+          <span>{/* {weather.current.condition.text} */}</span>
           <div className="links">
             <Link
               href="https://www.instagram.com/originalpecasagricolas/"
@@ -80,4 +85,5 @@ export default async function Header({}) {
       </header>
     </>
   );
+  
 }

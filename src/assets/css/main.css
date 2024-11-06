@@ -210,6 +210,103 @@ body .search form svg {
   top: 8px;
   right: 20px;
 }
+body .banner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  width: 100dvw;
+  height: auto;
+  margin-top: 25px;
+}
+body .banner .left,
+body .banner .rigth {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100dvw;
+  height: auto;
+  align-items: center;
+}
+body .banner .left .carroussel {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80dvw;
+  height: auto;
+  aspect-ratio: 16/9;
+  margin-bottom: 15px;
+  border: var(--border-01);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-01);
+}
+body .banner .rigth .clima-tempo,
+body .banner .rigth .dollar-hoje {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80dvw;
+  height: auto;
+  margin-bottom: 15px;
+  border: var(--border-01);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-01);
+}
+body .banner .rigth .clima-tempo {
+  align-items: center;
+}
+body .banner .rigth .clima-tempo .title {
+  font-family: var(--font-nunito-semibold);
+  color: var(--color-01);
+  margin-top: 10px;
+}
+body .banner .rigth .clima-tempo .city {
+  font-family: var(--font-nunito-extrabold);
+  color: var(--color-04);
+  font-size: 18pt;
+}
+body .banner .rigth .clima-tempo .temp {
+  font-family: var(--font-nunito-extrabold);
+  color: var(--color-02);
+  font-size: 30pt;
+}
+body .banner .rigth .clima-tempo .icons-one,
+body .banner .rigth .clima-tempo .icons-two {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  padding-inline: 20px;
+  font-family: var(--font-nunito-regular);
+  color: var(--color-02);
+  margin-top: 10px;
+}
+body .banner .rigth .clima-tempo .icons-one .icon,
+body .banner .rigth .clima-tempo .icons-two .icon {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 10%;
+}
+body .banner .rigth .clima-tempo .icons-one .icon svg,
+body .banner .rigth .clima-tempo .icons-two .icon svg {
+  width: auto;
+  height: 18px;
+  color: var(--color-02);
+}
+body .banner .rigth .clima-tempo .icons-one span,
+body .banner .rigth .clima-tempo .icons-two span {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 40%;
+  align-items: center;
+}
+body .banner .rigth .clima-tempo .icons-two {
+  margin-bottom: 10px;
+}
 
 @media screen and (min-width: 800px) {
   body {
